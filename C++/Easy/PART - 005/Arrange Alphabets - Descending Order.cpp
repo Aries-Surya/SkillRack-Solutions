@@ -1,24 +1,19 @@
-def arrange_alphabets(S):
-    """
-    Arrange the alphabets in the string S in descending order, removing duplicates.
+#include <iostream>
+#include <string>
+#include <set>
 
-    Args:
-        S: A string containing only lowercase alphabets.
+std::string arrange_alphabets(const std::string& S) {
+    std::set<char> unique_chars(S.begin(), S.end());
+    std::string result(unique_chars.rbegin(), unique_chars.rend());
+    return result;
+}
 
-    Returns:
-        A string containing the unique alphabets in S in descending order.
-    """
-    # Convert the sorted characters to a set to remove duplicates
-    sorted_chars = sorted(S, reverse=True)
-    unique_chars = sorted(set(sorted_chars), reverse=True)
-    # Join the unique characters to form the result string
-    return ''.join(unique_chars)
+int main() {
+    std::string S;
+    std::cin >> S;
 
-# Read the input string S
-S = input().strip()
+    std::string arranged_string = arrange_alphabets(S);
+    std::cout << arranged_string << std::endl;
 
-# Arrange the alphabets in descending order and remove duplicates
-arranged_string = arrange_alphabets(S)
-
-# Print the arranged string
-print(arranged_string)
+    return 0;
+}

@@ -1,17 +1,25 @@
-m = int(input())
-n = int(input())
+#include <iostream>
+#include <cmath>
 
-count = 0
+bool is_prime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i <= std::sqrt(n); ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
 
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+int main() {
+    int m, n, count = 0;
+    std::cin >> m >> n;
 
-for i in range(m, n+1):
-    if is_prime(i):
-        count += 1
-print(count)
+    for (int i = m; i <= n; ++i) {
+        if (is_prime(i)) {
+            count++;
+        }
+    }
+
+    std::cout << count << std::endl;
+
+    return 0;
+}

@@ -1,16 +1,24 @@
-def is_prime(num):
-    if num < 2:
-        return False
-    for i in range(2, int(num**0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+#include <iostream>
+#include <cmath>
 
-N = int(input())
+bool is_prime(int num) {
+    if (num < 2) return false;
+    for (int i = 2; i <= std::sqrt(num); ++i) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
 
-next_prime = N + 1
-while True:
-    if is_prime(next_prime):
-        print(next_prime)
-        break
-    next_prime += 1
+int main() {
+    int N;
+    std::cin >> N;
+
+    int next_prime = N + 1;
+    while (!is_prime(next_prime)) {
+        next_prime++;
+    }
+
+    std::cout << next_prime << std::endl;
+
+    return 0;
+}

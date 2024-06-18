@@ -1,14 +1,18 @@
-# Read the input string S
-S = input().strip()
+#include <iostream>
+#include <string>
 
-# Read the value of N
-N = int(input())
+int main() {
+    std::string S;
+    std::cin >> S;
 
-# Calculate the length of the string
-L = len(S)
+    int N;
+    std::cin >> N;
 
-# Rotate the string by N positions in the backward direction
-rotated_string = S[-(N % L):] + S[:-(N % L)]
+    int L = S.length();
+    N = N % L;  // Handle rotation greater than length of string
+    std::string rotated_string = S.substr(L - N) + S.substr(0, L - N);
 
-# Print the rotated string
-print(rotated_string)
+    std::cout << rotated_string << std::endl;
+
+    return 0;
+}

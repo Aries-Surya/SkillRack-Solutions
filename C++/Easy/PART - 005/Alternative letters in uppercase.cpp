@@ -1,12 +1,23 @@
-words = input().strip().split(" ")
+#include <iostream>
+#include <string>
+#include <sstream>
 
-for word in words:
-    
-    for i in range(1,len(word)+1):
-        
-        if i % 2==0:
-            print(word[i-1].lower(), end="")
-        else:
-            print(word[i-1].upper(), end="")
-    print(" ", end="")
-    
+int main() {
+    std::string input;
+    std::getline(std::cin, input);
+    std::istringstream iss(input);
+    std::string word;
+
+    while (iss >> word) {
+        for (size_t i = 0; i < word.length(); ++i) {
+            if ((i + 1) % 2 == 0) {
+                std::cout << (char)tolower(word[i]);
+            } else {
+                std::cout << (char)toupper(word[i]);
+            }
+        }
+        std::cout << " ";
+    }
+
+    return 0;
+}

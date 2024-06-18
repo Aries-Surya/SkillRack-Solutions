@@ -1,31 +1,24 @@
-def corner_elements_sum(matrix):
-    """
-    Calculates the sum of the elements in the corners of a square matrix.
+#include <iostream>
+#include <vector>
 
-    Args:
-        matrix: A list of lists representing a square matrix.
+int corner_elements_sum(const std::vector<std::vector<int>>& matrix) {
+    int N = matrix.size();
+    return matrix[0][0] + matrix[0][N - 1] + matrix[N - 1][0] + matrix[N - 1][N - 1];
+}
 
-    Returns:
-        The integer sum of the elements in the corners of the matrix.
-    """
-    N = len(matrix)
-    # Accessing corner elements directly
-    return matrix[0][0] + matrix[0][N-1] + matrix[N-1][0] + matrix[N-1][N-1]
+int main() {
+    int N;
+    std::cin >> N;
 
-# Read the value of N
-N = int(input())
+    std::vector<std::vector<int>> matrix(N, std::vector<int>(N));
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            std::cin >> matrix[i][j];
+        }
+    }
 
-# Initialize the sum of corner elements to 0
-corner_sum = 0
+    int corner_sum = corner_elements_sum(matrix);
+    std::cout << corner_sum << std::endl;
 
-# Read the elements of the square matrix
-matrix = []
-for _ in range(N):
-    row = list(map(int, input().split()))
-    matrix.append(row)
-
-# Calculate the sum of the corner elements using the function
-corner_sum = corner_elements_sum(matrix)
-
-# Print the sum of the corner elements
-print(corner_sum)
+    return 0;
+}
