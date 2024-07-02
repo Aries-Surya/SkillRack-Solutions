@@ -1,0 +1,21 @@
+import math
+
+# Function to calculate the difference between the length of the courts
+def court_length_difference(alen_spent, tim_spent, alen_width, tim_width):
+    alen_area = alen_spent / 5
+    tim_area = tim_spent / 5
+
+    alen_length = alen_area / alen_width
+    tim_length = tim_area / tim_width
+
+    difference = abs(alen_length - tim_length)
+
+    return "{:.2f}".format(difference)
+
+# Input values
+alen_spent, tim_spent = map(float, input().split())
+alen_width, tim_width = map(float, input().split())
+
+# Calculate and print the difference between the length of the courts
+result = court_length_difference(alen_spent, tim_spent, alen_width, tim_width)
+print(result)

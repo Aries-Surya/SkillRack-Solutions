@@ -1,0 +1,15 @@
+def count_occurrences(s, a, b):
+    count = 0
+    for i in range(len(s) - 1):
+        if s[i] == a and s[i + 1] == b:
+            count += 1
+    return count
+
+# Input values
+s = input().strip()
+a = input().strip()
+b = input().strip()
+
+# Count and print the occurrences where A is followed by B
+result = count_occurrences(s, a, b)
+print(result)

@@ -1,0 +1,9 @@
+# Input
+N = int(input())
+matrix = [list(map(int, input().split())) for _ in range(N)]
+
+# Calculate the sum of corner elements
+corner_sum = matrix[0][0] + matrix[0][N-1] + matrix[N-1][0] + matrix[N-1][N-1]
+
+# Output
+print(corner_sum)

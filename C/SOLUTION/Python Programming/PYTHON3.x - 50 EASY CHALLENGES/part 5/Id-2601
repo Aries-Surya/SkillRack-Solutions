@@ -1,0 +1,26 @@
+def find_correct_operator(expression):
+    numbers, rest = expression.split('=')
+    A, operator_and_B = numbers.split()
+    B, result = operator_and_B[:-1], operator_and_B[-1]
+
+    A, B, result = map(int, [A, B, result])
+
+    if rest == '+':
+        if A + B == result:
+            return '+'
+    elif rest == '-':
+        if A - B == result:
+            return '-'
+    elif rest == '*':
+        if A * B == result:
+            return '*'
+    elif rest == '/':
+        if B != 0 and A / B == result:
+            return '/'
+
+    return None
+
+expression = input().strip()
+correct_operator = find_correct_operator(expression)
+print(correct_operator)
+#error

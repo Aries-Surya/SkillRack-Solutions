@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main()
+{
+    int array[100], index = 0;
+    while(scanf("%d", &array[index]) == 1)
+    {
+        index++;
+    }
+    int left = 0, right = index-1;
+    int leftSum = 0, rightSum = 0;
+    while(left < right)
+    {
+        leftSum += array[left++];
+        rightSum += array[right--];
+    }
+    if(left == right)
+    {
+        rightSum += array[right];
+    }
+    printf("%d", leftSum*rightSum);
+    return 0;
+}

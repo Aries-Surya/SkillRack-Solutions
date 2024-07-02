@@ -1,0 +1,16 @@
+L = input().split()
+
+total_distance = 0
+total_time = 0
+
+for item in L:
+    distance, time_taken = map(float, item.split('@'))
+    total_distance += distance
+    total_time += time_taken
+
+average_speed = total_distance / total_time
+
+# Format the output to have 2 decimal places
+formatted_speed = "{:.2f}".format(average_speed)
+
+print(formatted_speed, "kmph")

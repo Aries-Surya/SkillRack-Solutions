@@ -1,0 +1,30 @@
+def decrypt_message(encrypted_message, columns):
+    rows = (len(encrypted_message) + columns - 1) // columns
+    matrix = [[' ' for _ in range(columns)] for _ in range(rows)]
+
+    # Fill the matrix with the encrypted message
+    k = 0
+    for i in range(rows):
+        for j in range(columns):
+            if k < len(encrypted_message):
+                matrix[i][j] = encrypted_message[k]
+                k += 1
+
+    # Read the original message by navigating the matrix
+    original_message = ''
+    for i in range(columns):
+        if i % 2 == 0:
+            original_message += ''.join(matrix[j][i] for j in range(rows))
+        else:
+            original_message += ''.join(matrix[j][i] for j in range(rows - 1, -1, -1))
+
+    return original_message
+
+# Input
+encrypted_message = input().strip()
+columns = int(input().strip())
+
+# Output
+result = decrypt_message(encrypted_message, columns)
+print(result)
+#error

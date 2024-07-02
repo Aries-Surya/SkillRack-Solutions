@@ -1,0 +1,11 @@
+S = input().strip()
+C = input().strip()
+
+result = ""
+
+for char in S:
+    if char == C:
+        break
+    result += char
+
+print(result)

@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char L = sc.nextLine().toUpperCase().charAt(0);
+        switch (L) {
+            case 'W':
+                System.out.println("whatsapp");
+                break;
+            case 'T':
+                System.out.println("twitter");
+                break;
+            case 'F':
+                System.out.println("facebook");
+                break;
+            default:
+                System.out.println("undefined");
+        }
+
+    }
+
+}

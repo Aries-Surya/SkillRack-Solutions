@@ -1,0 +1,14 @@
+car_info = input().split()
+
+lowest_mileage_car = ""
+lowest_mileage = float('inf')
+
+for car in car_info:
+    car_name, mileage_str = car.split('@')
+    mileage = float(mileage_str)
+
+    if mileage < lowest_mileage:
+        lowest_mileage_car = car_name
+        lowest_mileage = mileage
+
+print(lowest_mileage_car)

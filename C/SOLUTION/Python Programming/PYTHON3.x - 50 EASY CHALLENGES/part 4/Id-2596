@@ -1,0 +1,14 @@
+def middle_three_letters(s):
+    
+    middle_index = len(s) // 2
+    
+   
+    middle_three = s[middle_index - 1 : middle_index + 2]
+    
+    return middle_three
+
+
+s = input().strip()
+
+
+print(middle_three_letters(s))

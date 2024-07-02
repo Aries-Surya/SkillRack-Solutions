@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, C, D;
+
+    // Read four integers from input
+    scanf("%d %d %d %d", &A, &B, &C, &D);
+
+    // Calculate S1: sum of B and D
+    int S1 = B + D;
+
+    // Calculate S2: sum of A and C
+    int S2 = A + C;
+
+    // Calculate the quotient of S1 divided by S2 (as a floating-point number)
+    double result = (double) S1 / S2;
+
+    // Print the result rounded to the nearest integer
+    printf("%d\n", (int)(result + 0.5));
+
+    return 0;
+}
+#error

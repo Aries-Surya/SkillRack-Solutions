@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+    int N, count = 1, max = 0;
+    scanf("%d", &N);
+    int arr[N];
+    for(int index = 0; index < N; index++)
+    {
+        scanf("%d", &arr[index]);
+    }
+    for(int index = 0; index < N - 1; index++)
+    {
+        if(arr[index]%2 == 0 && arr[index + 1]%2 == 0)
+        {
+            count++;
+        }
+        else
+        {
+            if(count > max)
+            {
+                max = count;
+            }
+            count = 1;
+        }
+    }
+    printf("%d",(max > count) ? max : count);
+
+    return 0;
+}

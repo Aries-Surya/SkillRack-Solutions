@@ -1,0 +1,8 @@
+def calculate_sum_of_integers():
+    integer_list = list(map(int, input().strip().split()))
+    if all(1 <= val <= 1000 for val in integer_list):
+        print(sum(integer_list))
+    else:
+        print("Invalid input. Each integer value should be between 1 and 1000.")
+
+calculate_sum_of_integers()

@@ -1,0 +1,8 @@
+N = int(input())
+numbers = [int(input()) for _ in range(N)]
+
+
+sorted_numbers = sorted(numbers, reverse=True)
+second_largest = sorted_numbers[1]
+
+print(second_largest)

@@ -1,0 +1,15 @@
+N = int(input())
+
+total_first_innings = 0
+total_second_innings = 0
+
+for _ in range(N):
+    first_innings, second_innings = map(int, input().split())
+    total_first_innings += first_innings
+    total_second_innings += second_innings
+
+average_first_innings = total_first_innings / N
+average_second_innings = total_second_innings / N
+
+print(f'{average_first_innings:.2f}')
+print(f'{average_second_innings:.2f}')

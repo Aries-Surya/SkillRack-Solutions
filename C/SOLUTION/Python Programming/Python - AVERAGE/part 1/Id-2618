@@ -1,0 +1,24 @@
+def product_array(nums):
+    n = len(nums)
+    result = [1] * n
+
+    # Calculate products to the left of each element
+    left_product = 1
+    for i in range(n):
+        result[i] *= left_product
+        left_product *= nums[i]
+
+    # Calculate products to the right of each element
+    right_product = 1
+    for i in range(n - 1, -1, -1):
+        result[i] *= right_product
+        right_product *= nums[i]
+
+    return result
+
+# Input
+nums = list(map(int, input().strip().split()))
+
+# Output
+result = product_array(nums)
+print(' '.join(map(str, result)))

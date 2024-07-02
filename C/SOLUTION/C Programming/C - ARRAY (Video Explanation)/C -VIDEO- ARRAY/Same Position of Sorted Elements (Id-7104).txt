@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    int arr1[N], arr2[N];
+    for(int index=0; index<=N-1; index++){
+        scanf("%d", &arr1[index]);
+    }
+    for(int index=0; index<=N-1; index++){
+        scanf("%d", &arr2[index]);
+    }
+    for(int index=0; index<=N-1; index++){
+        for(int cmpIndex=index+1; cmpIndex<=N-1; cmpIndex++){
+            if(arr1[index] > arr1[cmpIndex]){
+                int temp = arr1[index];
+                arr1[index] = arr1[cmpIndex];
+                arr1[cmpIndex] = temp;
+            }
+            if(arr2[index] > arr2[cmpIndex]){
+                int temp = arr2[index];
+                arr2[index] = arr2[cmpIndex];
+                arr2[cmpIndex] = temp;
+            }
+        }
+        if(arr1[index] > arr2[index]){
+            printf("NO");
+            return 0;
+        }
+    }
+    printf("YES");
+    return 0;
+}

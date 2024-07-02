@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, C, D;
+
+    // Read four integers from input
+    scanf("%d %d %d %d", &A, &B, &C, &D);
+
+    // Calculate (C + A) / (B + D) using floating-point arithmetic
+    double result = (double)(C + A) / (B + D);
+
+    // Print the result as an integer (rounded to nearest integer)
+    printf("%d\n", (int)(result + 0.5));
+
+    return 0;
+}
+#error

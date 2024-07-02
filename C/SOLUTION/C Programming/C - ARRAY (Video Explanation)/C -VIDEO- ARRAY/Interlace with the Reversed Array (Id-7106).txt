@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+int main()
+{
+    int M, N;
+    scanf("%d", &M);
+    int arr1[M], index1;
+    for(index1 = 0; index1 < M; index1++)
+    {
+        scanf("%d", &arr1[index1]);
+    }
+    scanf("%d", &N);
+    int arr2[N], index2;
+    for(index2 = 0; index2 < N; index2++)
+    {
+        scanf("%d", &arr2[index2]);
+    }
+    index1 = 0;
+    index2 = N-1;
+    while(index1 <= M-1 && index2 >= 0)
+    {
+        printf("%d %d ", arr1[index1++], arr2[index2--]);
+    }
+    while(index1 <= M-1)
+    {
+        printf("%d ", arr1[index1++]);
+    }
+    while(index2 >= 0)
+    {
+        printf("%d ", arr2[index2--]);
+    }
+    return 0;
+}

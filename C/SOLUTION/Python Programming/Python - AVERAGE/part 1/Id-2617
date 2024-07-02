@@ -1,0 +1,14 @@
+import re
+
+def count_articles(s):
+    articles = ["a", "an", "the"]
+    words = re.findall(r'\b\w+\b', s)
+    count = sum(word.lower() in articles for word in words)
+    return count
+
+# Input
+s = input().strip()
+
+# Output
+result = count_articles(s)
+print(result)

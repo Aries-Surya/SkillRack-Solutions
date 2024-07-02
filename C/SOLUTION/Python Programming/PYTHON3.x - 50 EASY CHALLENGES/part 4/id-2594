@@ -1,0 +1,12 @@
+S = input()
+
+char_seen = set()
+
+for char in reversed(S):
+    if char in char_seen:
+        print(char)
+        break
+    else:
+        char_seen.add(char)
+else:
+    print("No repeating character found.")

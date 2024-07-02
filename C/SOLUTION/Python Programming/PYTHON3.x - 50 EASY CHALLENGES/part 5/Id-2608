@@ -1,0 +1,17 @@
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Input
+N1 = int(input())
+N2 = int(input())
+
+# Count prime numbers between N1 and N2
+count_primes = sum(1 for num in range(N1, N2 + 1) if is_prime(num))
+
+# Output
+print(count_primes)

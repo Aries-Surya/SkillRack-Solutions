@@ -1,0 +1,32 @@
+def find_min_distance(s, w1, w2):
+    words = s.split()
+
+    if w1 not in words or w2 not in words:
+        return -1  # Return -1 if either word is not present in the string
+
+    if w1 == w2:
+        indices = [i for i, word in enumerate(words) if word == w1]
+        return min(abs(indices[i] - indices[i + 1]) for i in range(len(indices) - 1))
+
+    min_distance = float('inf')
+    last_index_w1 = float('-inf')
+    last_index_w2 = float('-inf')
+
+    for i, word in enumerate(words):
+        if word == w1:
+            last_index_w1 = i
+            min_distance = min(min_distance, abs(last_index_w1 - last_index_w2))
+        elif word == w2:
+            last_index_w2 = i
+            min_distance = min(min_distance, abs(last_index_w1 - last_index_w2))
+
+    return min_distance if min_distance != float('inf') else -1
+
+# Input
+s = input().strip()
+w1 = input().strip()
+w2 = input().strip()
+
+# Output
+result = find_min_distance(s, w1, w2)
+print(result)

@@ -1,0 +1,8 @@
+def print_integers_up_to_n():
+    N = int(input().strip())
+    if 2 <= N <= 100:
+        print(*range(1, N + 1))
+    else:
+        print("Invalid input. N should be between 2 and 100.")
+
+print_integers_up_to_n()

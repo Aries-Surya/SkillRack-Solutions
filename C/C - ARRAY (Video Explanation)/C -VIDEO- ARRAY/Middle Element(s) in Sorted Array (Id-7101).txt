@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    int arr[N], index;
+    for(index=0; index<N; index++)
+    {
+        scanf("%d", &arr[index]);
+    }
+    for(int index=0; index<=N-2; index++)
+    {
+        for(int cmpIndex=index+1; cmpIndex<N; cmpIndex++)
+        {
+            if(arr[index] > arr[cmpIndex])
+            {
+                int temp = arr[index];
+                arr[index] = arr[cmpIndex];
+                arr[cmpIndex] = temp;
+            }
+        }
+    }
+    if(N%2 != 0)
+    {
+        printf("%d", arr[N/2]);
+    }
+    else
+    {
+        printf("%d %d",arr[N/2-1], arr[N/2]);
+    }
+    return 0;
+}

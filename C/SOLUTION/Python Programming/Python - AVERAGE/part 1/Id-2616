@@ -1,0 +1,27 @@
+def line_of_sight_issue(ax, ay, bx, by, cx, cy, dx, dy):
+    # Check if towers B or D are in the line of sight from A and C
+    slope_ac = (cy - ay) / (cx - ax) if (cx - ax) != 0 else float('inf')
+    slope_bd = (dy - by) / (dx - bx) if (dx - bx) != 0 else float('inf')
+
+    if slope_ac == slope_bd:
+        return "yes"
+
+    # Check if towers A or C are in the line of sight from B and D
+    slope_ab = (by - ay) / (bx - ax) if (bx - ax) != 0 else float('inf')
+    slope_cd = (dy - cy) / (dx - cx) if (dx - cx) != 0 else float('inf')
+
+    if slope_ab == slope_cd:
+        return "yes"
+
+    return "no"
+
+# Input
+ax, ay = map(int, input().strip().split())
+bx, by = map(int, input().strip().split())
+cx, cy = map(int, input().strip().split())
+dx, dy = map(int, input().strip().split())
+
+# Output
+result = line_of_sight_issue(ax, ay, bx, by, cx, cy, dx, dy)
+print(result)
+#error

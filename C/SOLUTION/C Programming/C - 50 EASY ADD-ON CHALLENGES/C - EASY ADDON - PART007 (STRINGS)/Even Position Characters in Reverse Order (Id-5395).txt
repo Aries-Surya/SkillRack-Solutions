@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char S[1001]; // Buffer to hold the input string with a max length of 1000
+    scanf("%s", S); // Read the input string
+
+    int length = strlen(S);
+    char result[501]; // Buffer to store characters at even positions (max 500 for a string of length 1000)
+    int index = 0;
+
+    // Collect characters at even positions (0-based indexing)
+    for (int i = 1; i < length; i += 2) {
+        result[index++] = S[i];
+    }
+    
+    // Print the collected characters in reverse order
+    for (int i = index - 1; i >= 0; i--) {
+        printf("%c", result[i]);
+    }
+    
+    return 0;
+}

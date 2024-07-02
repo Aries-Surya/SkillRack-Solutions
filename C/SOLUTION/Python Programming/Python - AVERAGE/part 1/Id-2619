@@ -1,0 +1,20 @@
+def is_palindrome(s):
+    return s == s[::-1]
+
+def count_sub_palindromes(s):
+    count = 0
+    n = len(s)
+
+    for i in range(n):
+        for j in range(i + 2, n + 1):
+            if is_palindrome(s[i:j]):
+                count += 1
+
+    return count
+
+# Input
+s = input().strip()
+
+# Output
+result = count_sub_palindromes(s)
+print(result)

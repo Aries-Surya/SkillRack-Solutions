@@ -1,0 +1,26 @@
+# Get the number of students
+N = int(input())
+
+# Initialize variables to store information about the top scorer
+top_scorer_name = ""
+top_scorer_marks = -1
+
+# Iterate through each student
+for _ in range(N):
+    # Get the input for each student
+    student_info = input().split(':')
+    name = student_info[0]
+    marks_math = int(student_info[1])
+    marks_physics = int(student_info[2])
+    marks_chemistry = int(student_info[3])
+
+    # Calculate the total marks for each student
+    total_marks = marks_math + marks_physics + marks_chemistry
+
+    # Check if the current student has higher total marks than the current top scorer
+    if total_marks > top_scorer_marks:
+        top_scorer_name = name
+        top_scorer_marks = total_marks
+
+# Print the name of the top scorer
+print(top_scorer_name)

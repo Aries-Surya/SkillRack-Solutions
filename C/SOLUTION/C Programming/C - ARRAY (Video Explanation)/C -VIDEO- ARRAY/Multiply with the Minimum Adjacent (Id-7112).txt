@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    int index, arr[N];
+    for(index = 0; index < N; index++)
+    {
+        scanf("%d", &arr[index]);
+    }
+    printf("%d ", arr[0] * arr[1]);
+    for(index = 1; index < N-1; index++)
+    {
+        printf("%d ", arr[index] * (arr[index-1] < arr[index+1] ? arr[index-1] : arr[index+1]));
+    }
+    printf("%d ", arr[N-1] * arr[N-2]);
+    return 0;
+}

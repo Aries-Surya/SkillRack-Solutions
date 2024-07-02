@@ -1,0 +1,12 @@
+def nth_term_in_ap(a, b, c, n):
+    common_difference = b - a
+    nth_term = a + (n - 1) * common_difference
+    return nth_term
+
+# Input values
+a, b, c = map(int, input().split())
+n = int(input())
+
+# Calculate and print the Nth term in the arithmetic progression
+result = nth_term_in_ap(a, b, c, n)
+print(result)

@@ -1,0 +1,20 @@
+def calculate_scores(goals_a, goals_b):
+    points_a = points_b = 0
+    for goal_a, goal_b in zip(goals_a, goals_b):
+        if goal_a == goal_b:
+            points_a += 1
+            points_b += 1
+        elif goal_a > goal_b:
+            points_a += 3
+        else:
+            points_b += 3
+
+    return points_a, points_b
+
+# Input
+goals_a = list(map(int, input().strip().split()))
+goals_b = list(map(int, input().strip().split()))
+
+# Output
+result = calculate_scores(goals_a, goals_b)
+print(result[0], result[1])

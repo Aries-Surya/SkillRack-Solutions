@@ -1,0 +1,6 @@
+X = int(input())
+Y = int(input())
+
+odd_numbers = [str(i) for i in range(X + 1, Y) if i % 2 != 0]
+
+print(" ".join(odd_numbers))

@@ -1,0 +1,5 @@
+S = input().strip()
+
+reversed_string = S[::-1]
+
+print(reversed_string)

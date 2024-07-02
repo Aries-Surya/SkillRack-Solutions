@@ -1,0 +1,4 @@
+input_line = input()
+integers = list(map(int, input_line.split()))
+sum_of_integers = sum(integers)
+print(sum_of_integers)

@@ -1,0 +1,17 @@
+def find_top_scorer():
+    N = int(input().strip())
+    top_scorer_name = ""
+    top_score = -1
+
+    for _ in range(N):
+        batsman_details = input().strip().split(',')
+        batsman_name = batsman_details[0]
+        runs_scored = int(batsman_details[1])
+
+        if runs_scored > top_score:
+            top_scorer_name = batsman_name
+            top_score = runs_scored
+
+    print(top_scorer_name)
+
+find_top_scorer()

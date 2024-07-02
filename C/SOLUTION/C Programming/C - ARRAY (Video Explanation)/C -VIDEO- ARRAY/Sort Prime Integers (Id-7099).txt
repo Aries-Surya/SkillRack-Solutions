@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int N, val;
+    scanf("%d", &N);
+    int primes[N], index=0, flag = 1;
+    for(int ctr=1; ctr<=N; ctr++)
+    {
+        scanf("%d", &val);
+        for(int divCtr=2; divCtr*divCtr<=val; divCtr++)
+        {
+            if(val%divCtr == 0)
+            {
+                flag = 0;
+                break;
+            }
+        }
+        if(flag == 1 && val >= 2)
+        {
+            primes[index] = val;
+            index++;
+        }
+        flag = 1;
+    }
+    int primeCount = index;
+    if(primeCount == 0)
+    {
+        printf("-1");
+        return 0;
+    }
+    for(int index=0; index<primeCount; index++)
+    {
+        for(int cmpIndex=index+1; cmpIndex<primeCount; cmpIndex++)
+        {
+            if(primes[index] > primes[cmpIndex])
+            {
+                int larger = primes[index];
+                primes[index] = primes[cmpIndex];
+                primes[cmpIndex] = larger;
+            }
+        }
+        printf("%d ", primes[index]);
+    }
+    return 0;
+}

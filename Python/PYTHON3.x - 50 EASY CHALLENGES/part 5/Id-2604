@@ -1,0 +1,10 @@
+# Input
+s = input().strip()
+
+# Sort the characters in descending order
+sorted_chars = sorted(s, key=lambda x: ord(x), reverse=True)
+
+# Output
+result = ''.join(sorted_chars)
+print(result)
+#error

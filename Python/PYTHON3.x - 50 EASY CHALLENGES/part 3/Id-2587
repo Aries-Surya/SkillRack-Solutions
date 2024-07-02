@@ -1,0 +1,3 @@
+F = float(input())
+paise = round(F * 100)
+print(paise)

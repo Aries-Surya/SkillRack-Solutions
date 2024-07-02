@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    char str; // Issue: Declaring str as a single character
+
+    // Incorrect input method for character
+    scanf("%c", &str);
+
+    // Incorrect output method for character
+    printf("%s", str);
+
+    return 0;
+}
+#error

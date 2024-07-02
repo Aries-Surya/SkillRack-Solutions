@@ -1,0 +1,11 @@
+def find_hcf(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+X = int(input())
+Y = int(input())
+
+hcf_result = find_hcf(X, Y)
+
+print(hcf_result)

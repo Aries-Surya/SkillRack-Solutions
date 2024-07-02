@@ -1,0 +1,6 @@
+S = input()
+X = int(input())
+
+result = S[X - 1::X]
+
+print(result)

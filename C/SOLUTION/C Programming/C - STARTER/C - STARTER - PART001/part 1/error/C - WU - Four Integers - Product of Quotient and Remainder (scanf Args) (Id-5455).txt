@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, C, D;
+    scanf("%d %d %d %d", &A, &B, &C, &D);
+
+    int Q = B / C; // Quotient when B is divided by C
+    int R = A % D; // Remainder when A is divided by D
+
+    int product = Q * R;
+    printf("%d\n", product);
+
+    return 0;
+}
+#error

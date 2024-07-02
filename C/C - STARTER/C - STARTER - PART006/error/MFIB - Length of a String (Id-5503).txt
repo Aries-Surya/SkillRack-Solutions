@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>  // Include the string.h library for strlen()
+
+int main()
+{
+    char str[101];
+    int strlen;
+    scanf("%s", str);  // Read the input string
+    strlen = strlen(str);  // Calculate the length of the string
+    printf("%d", strlen);  // Print the length of the string
+    return 0;
+}
+#error
