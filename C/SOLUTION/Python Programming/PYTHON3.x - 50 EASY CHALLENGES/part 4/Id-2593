@@ -1,8 +1,0 @@
-S = input()
-
-for char in S:
-    if not char.isalnum():
-        print(char)
-        break
-else:
-    print("No non-alphanumeric character found.")

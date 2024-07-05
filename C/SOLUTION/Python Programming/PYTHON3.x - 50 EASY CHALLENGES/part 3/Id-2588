@@ -1,8 +1,0 @@
-H = int(input())
-L = int(input())
-
-
-A = (2 * H - L // 2)
-B = H - A
-
-print(A, B)

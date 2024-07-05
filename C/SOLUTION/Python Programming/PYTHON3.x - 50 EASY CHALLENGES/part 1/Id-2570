@@ -1,9 +1,0 @@
-S = input().strip()
-
-uppercase_count = 0
-
-for char in S:
-    if char.isupper():
-        uppercase_count += 1
-
-print(uppercase_count)

@@ -1,6 +1,0 @@
-import re
-
-S = input()
-
-result = ' '.join(re.sub(r'\b\w', lambda x: x.group(0).upper(), word) for word in S.split())
-print(result)

@@ -1,8 +1,0 @@
-input_string = input()
-alphabets_only = ""
-
-for char in input_string:
-    if char.isalpha():
-        alphabets_only += char
-
-print(alphabets_only)

@@ -1,5 +1,0 @@
-S = input().strip()
-
-result = S[1:-1]
-
-print(result)

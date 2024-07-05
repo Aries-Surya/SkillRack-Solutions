@@ -1,7 +1,0 @@
-dice_numbers = list(map(int, input().split()))
-X = int(input())
-Y = int(input())
-
-net_gain_loss = sum([X if num % 2 != 0 else -Y for num in dice_numbers])
-
-print(net_gain_loss)
