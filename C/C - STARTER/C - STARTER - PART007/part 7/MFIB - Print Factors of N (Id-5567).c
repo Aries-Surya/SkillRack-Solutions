@@ -5,13 +5,12 @@ int main() {
     scanf("%d", &N);
     
     // Iterate through numbers from 1 to N
-    for(int i = 1; i <= N; i++) {
+    for(int ctr = 1; ctr <= N; ctr++) {
         // Check if i is a factor of N
-        if (N % i == 0) {
-            printf("%d ", i);
+        if (N % ctr == 0) {
+            printf("%d ", ctr);
         }
     }
     
     return 0;
 }
-dai change i = ctr
