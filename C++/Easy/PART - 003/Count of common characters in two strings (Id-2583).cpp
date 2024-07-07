@@ -1,31 +1,27 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
+#include <unordered_set>
+using namespace std;
 
-int main() {
-    std::string S1, S2;
-    std::cin >> S1 >> S2;
+int main() {s
+    string s1, s2;
+    getline(cin, s1);
+    getline(cin, s2);
 
-    int countS1[26] = {0};
-    int countS2[26] = {0};
+    unordered_set<char> set1(s1.begin(), s1.end());
 
-    // Count frequency of each character in S1
-    for (char c : S1) {
-        countS1[c - 'a']++;
+    int common_count = 0;
+
+    // Count common characters in s2 that are also in set1
+    for (char c : s2) {
+        if (set1.count(c)) {
+            common_count++;
+            set1.erase(c); // Ensure each character is counted only once
+        }
     }
 
-    // Count frequency of each character in S2
-    for (char c : S2) {
-        countS2[c - 'a']++;
-    }
-
-    int commonCount = 0;
-    // Calculate common characters
-    for (int i = 0; i < 26; i++) {
-        commonCount += std::min(countS1[i], countS2[i]);
-    }
-
-    std::cout << commonCount << std::endl;
+    cout << common_count << endl;
 
     return 0;
 }
+
