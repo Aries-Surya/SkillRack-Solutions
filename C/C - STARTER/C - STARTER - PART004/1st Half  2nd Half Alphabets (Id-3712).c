@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    char L;
     
     // Read the character L from input
     scanf("%c", &L);
@@ -15,3 +14,5 @@ int main() {
     
     return 0;
 }
+char L;
+    
