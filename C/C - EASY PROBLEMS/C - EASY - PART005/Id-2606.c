@@ -1,21 +1,14 @@
-#include <stdio.h>
-#include <string.h>
+ID - 2605
 
-int main() {
-    char S[101];
-    int N;
-    scanf("%s%d", S, &N);
-
-    int len = strlen(S);
-    char rotated[len + 1];
-
-    for(int i = 0; i < len; i++) {
-        rotated[(i + N) % len] = S[i];
-    }
-
-    rotated[len] = '\0';
-
-    printf("%s", rotated);
-
-    return 0;
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+int n,arr1[1000][1000],sum;
+scanf(“%d”,&n);
+for(int i=0;i<n;i++)
+for(int j=0;j<n;j++)
+scanf(“%d”,&arr1[i][j]);
+sum=arr1[0][0]+arr1[0][n-1]+arr1[n-1][0]+arr1[n-1][n-1];
+printf(“%d”,sum);
 }
